@@ -1,0 +1,451 @@
+:root {
+    --primary-color: #ff4655;
+    --secondary-color: #0f1923;
+    --accent-color: #ece8e1;
+    --dark-color: #111;
+    --light-color: #f8f8f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(15, 25, 35, 0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a, nav ul li span {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+#balanceLink {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Main Content */
+#app-content {
+    padding-top: 80px;
+    min-height: calc(100vh - 80px);
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt29d7c4f6bc077e9a/5eb26f54402b8b4d13a56656/agent-background-generic.JPG') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 25, 35, 0.7);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+/* Cases Section */
+.cases-section {
+    padding: 80px 0;
+}
+
+.cases-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.cases-section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 15px auto;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.case-card {
+    background: rgba(15, 25, 35, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 70, 85, 0.3);
+    text-align: center;
+    padding: 20px;
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+}
+
+.case-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.case-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.case-card p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Balance Section */
+.bakiye-section {
+    padding: 80px 0;
+}
+
+.bakiye-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.bakiye-section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 15px auto;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.method-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 70, 85, 0.3);
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color);
+}
+
+.method-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.method-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.payment-form {
+    background: rgba(15, 25, 35, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: none;
+}
+
+.payment-form.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    color: white;
+}
+
+/* Butonlar */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--accent-color);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: #e03a4c;
+    transform: translateY(-3px);
+}
+
+.open-case {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.payment-submit {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.payment-submit:hover {
+    background: #e03a4c;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background: var(--secondary-color);
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--accent-color);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--primary-color);
+}
+
+.case-opening-animation {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.items-container {
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: left 5s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+.item {
+    min-width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.won-item {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 70, 85, 0.1);
+    border-radius: 8px;
+    border: 2px dashed var(--primary-color);
+}
+
+#wonAmount {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .cases-grid,
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+}
